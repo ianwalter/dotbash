@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 mkdir ~/.bash
 cp variables ~/.bash/variables
