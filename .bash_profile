@@ -7,24 +7,6 @@ set show-all-if-ambiguous on
 # Show all autocomplete results at once
 set page-completions off
 
-# OS X specific configuration.
-if [[ $(uname) == 'Darwin' ]]; then
-  # Increase window resize speed for Cocoa applications.
-  defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
-
-  # Expand save panel by default.
-  defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
-  defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
-
-  # Automatically quit printer app once the print jobs complete.
-  defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
-
-  # Enable the Develop menu and the Web Inspector in Safari.
-  defaults write com.apple.Safari IncludeDevelopMenu -bool true
-  defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
-  defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
-fi
-
 # Source environment variable files.
 for file in ~/.bash/; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
