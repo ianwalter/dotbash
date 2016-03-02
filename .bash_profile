@@ -8,8 +8,8 @@ set show-all-if-ambiguous on
 set page-completions off
 
 # Source environment variable files.
-for file in ~/.bash/; do
-	[ -r "$file" ] && [ -f "$file" ] && source "$file";
+for file in ~/.bash/variables/*.bash_profile; do
+	[ -r "$file" ] && [ -f "$file" ] && . "$file";
 done;
 
 unset file;

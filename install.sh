@@ -8,7 +8,8 @@ cp variables/* ~/.bash/variables/
 
 if [[ $(uname) == 'Darwin' ]]; then
 
-  #
+  # Add OS X specific settings and output .bash_profile to user's home
+  # direcotry.
   cat .bash_profile osx.bash_profile > ~/.bash_profile
 
 else
@@ -20,8 +21,8 @@ else
   fi
 fi
 
-# Source .bash_profile so that commands are executed immediately.
-source ~/.bash_profile
+# Reload the shell so that changes take effect immediately.
+exec $SHELL -l
 
 if [[ $? == 0 ]]; then
   echo "Installed bash configuration successfully."
