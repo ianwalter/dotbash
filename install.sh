@@ -21,9 +21,6 @@ else
   fi
 fi
 
-# Reload the shell so that changes take effect immediately.
-exec $SHELL -l
-
 if [[ $? == 0 ]]; then
   echo "Installed bash configuration successfully."
 fi
