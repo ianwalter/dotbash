@@ -10,7 +10,7 @@ if [[ $(uname) == 'Darwin' ]]; then
 
   # Add OS X specific settings and output .bash_profile to user's home
   # direcotry.
-  cat .bash_profile osx.bash_profile > ~/.bash_profile
+  cat .bash_profile osx.bash > ~/.bash_profile
 
 else
   if [[ $(uname) == 'Linux' ]]; then
