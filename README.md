@@ -1,9 +1,9 @@
-# [dotbash](https://github.com/ianwalter/dotbash)
-Ian's bash configuration (part of [dotfiles](https://github.com/ianwalter/dotfiles)).
+# [dotsh](https://github.com/ianwalter/dotsh)
+Ian's shell configurations (part of [dotfiles](https://github.com/ianwalter/dotfiles)).
 
 ## Usage
-To add an environment variable, just add the variable inside of a file within
-`~/.bash/variables`.
+To add an environment variable, just add the variable inside of a .bash file
+within `~/.bash/variables`.
 
 &nbsp;
 

@@ -21,6 +21,9 @@ else
   fi
 fi
 
+# Copy .zshrc to current user's directory.
+cp .zshrc ~/.zshrc
+
 if [[ $? == 0 ]]; then
   echo "Installed bash configuration successfully."
 fi
