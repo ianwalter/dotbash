@@ -25,5 +25,5 @@ fi
 cp .zshrc ~/.zshrc
 
 if [[ $? == 0 ]]; then
-  echo "Installed bash configuration successfully."
+  echo "Installed shell configurations successfully."
 fi
