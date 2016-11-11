@@ -14,4 +14,4 @@ defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool 
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
 
 # Disable swipe navigation in Chrome.
-defaults write com.google.Chrome.plist AppleEnableSwipeNavigateWithScrolls -bool FALSE
+defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool FALSE
