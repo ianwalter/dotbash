@@ -18,11 +18,19 @@ else
     # Copy .bash_profile to current user's directory.
     cp .bash_profile ~/.bash_profile
 
+    # Install zsh
+    sudo apt-get install -y zsh
+
   fi
 fi
 
 # Copy .zshrc to current user's directory.
 cp .zshrc ~/.zshrc
+
+# Install the Pure prompt if NPM is installed.
+if [ `which npm` ]; then
+  npm install -g pure-prompt
+fi
 
 if [[ $? == 0 ]]; then
   echo "Installed shell configurations successfully."
