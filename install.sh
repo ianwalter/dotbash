@@ -29,15 +29,17 @@ fi
 
 if [[ $(uname) == 'Darwin' ]] || [[ $(uname) == 'Linux' ]]; then
 
-  # Add Fish to list of shells.
   if grep -Fxq "/usr/local/bin/fish" /etc/shells; then
     echo "Fish already added to list of shells"
   else
-    echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
-  fi
 
-  # Change default shell to Fish.
-  sudo chsh -s /usr/local/bin/fish
+    # Add Fish to list of shells.
+    echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
+
+    # Change default shell to Fish.
+    sudo chsh -s /usr/local/bin/fish
+
+  fi
 
   # Install Fisherman plugin manager.
   curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
