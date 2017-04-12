@@ -42,7 +42,7 @@ if [[ $(uname) == 'Darwin' ]] || [[ $(uname) == 'Linux' ]]; then
   cp fishfile ~/.config/fish/fishfile
 
   # Run Fisherman to install missing dependencies.
-  fisher
+  fish -c fisher
 
 fi
 
