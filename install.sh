@@ -12,24 +12,38 @@ if [[ $(uname) == 'Darwin' ]]; then
   # direcotry.
   cat .bash_profile osx.bash > ~/.bash_profile
 
+  # Install Fish
+  brew install fish curl
+
 else
   if [[ $(uname) == 'Linux' ]]; then
 
     # Copy .bash_profile to current user's directory.
     cp .bash_profile ~/.bash_profile
 
-    # Install zsh
-    sudo apt-get install -y zsh
+    # Install Fish
+    sudo apt-get install -y fish curl
 
   fi
 fi
 
-# Copy .zshrc to current user's directory.
-cp .zshrc ~/.zshrc
+if [[ $(uname) == 'Darwin' ]] || [[ $(uname) == 'Linux' ]]; then
 
-# Install the Pure prompt if NPM is installed.
-if [ `which npm` ]; then
-  npm install -g pure-prompt
+  # Add Fish to list of shells.
+  echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
+
+  # Change default shell to Fish.
+  sudo chsh -s /usr/local/bin/fish
+
+  # Install Fisherman plugin manager.
+  curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
+
+  # Copy fishfile to Fish config directory.
+  cp fishfile ~/.config/fish/fishfile
+
+  # Run Fisherman to install missing dependencies.
+  fisher
+
 fi
 
 if [[ $? == 0 ]]; then
