@@ -1,27 +1,26 @@
 #!/bin/bash
 
-# Make .bash and .bash/variables directories if they don't exist.
-mkdir -p ~/.bash/variables
+# Install trash CLI program if NPM is installed.
+if [ `which npm` ]; then
+  npm install -g trash-cli
+fi
 
-# Copy variables files.
-cp variables/* ~/.bash/variables/
+# Copy fish configuration to the configuration directory
+cp fishfile ~/.config/fish/fishfile
+cp config.fish ~/.config/fish/config.fish
 
 if [[ $(uname) == 'Darwin' ]]; then
 
-  # Add OS X specific settings and output .bash_profile to user's home
-  # direcotry.
-  cat .bash_profile osx.bash > ~/.bash_profile
+  # Add OS X specific configuration to the configuration directory.
+  cp osx.fish ~/.config/fish/osx.fish
 
-  # Install Fish
+  # Install Fish.
   brew install fish curl
 
 else
   if [[ $(uname) == 'Linux' ]]; then
 
-    # Copy .bash_profile to current user's directory.
-    cp .bash_profile ~/.bash_profile
-
-    # Install Fish
+    # Install Fish.
     sudo apt-get install -y fish curl
 
   fi
@@ -44,14 +43,11 @@ if [[ $(uname) == 'Darwin' ]] || [[ $(uname) == 'Linux' ]]; then
   # Install Fisherman plugin manager.
   curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
 
-  # Copy fishfile to Fish config directory.
-  cp fishfile ~/.config/fish/fishfile
-
   # Run Fisherman to install missing dependencies.
   fish -c fisher
 
 fi
 
 if [[ $? == 0 ]]; then
-  echo "Installed shell configurations successfully."
+  echo "Installed fish configuration successfully."
 fi
