@@ -36,7 +36,7 @@ if [[ $(uname) == 'Darwin' ]] || [[ $(uname) == 'Linux' ]]; then
     echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
 
     # Change default shell to Fish.
-    sudo chsh -s /usr/local/bin/fish
+    chsh -s /usr/local/bin/fish
 
   fi
 
