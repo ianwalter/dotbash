@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install trash CLI program if NPM is installed.
-if [ `which npm` ]; then
+if [[ `which npm` ]]; then
   npm install -g trash-cli
 fi
 
@@ -40,13 +40,13 @@ if [[ $(uname) == 'Darwin' ]] || [[ $(uname) == 'Linux' ]]; then
 
   fi
 
-  # Install Fisherman plugin manager.
-  curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
-
-  # Run Fisherman to install missing dependencies.
-  fish -c fisher
-
 fi
+
+# Install Fisherman plugin manager.
+curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
+
+# Run Fisherman to install missing dependencies.
+fish -c fisher
 
 if [[ $? == 0 ]]; then
   echo "Installed fish configuration successfully."
