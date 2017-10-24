@@ -14,9 +14,6 @@ end
 if test -d ~/.composer
   set -x PATH ~/.composer/vendor/bin $PATH
 end
-if test -d ~/spark-installer
-  set -x PATH ~/spark-installer $PATH
-end
 
 # Move files to trash instead of completely removing them.
 alias rm="trash"
