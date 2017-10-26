@@ -44,7 +44,11 @@ if [[ $(uname) == 'Darwin' ]] || [[ $(uname) == 'Linux' ]]; then
   fi
 
   # Change default shell to Fish.
-  chsh -s /usr/local/bin/fish
+  if [[ $(uname) == 'Darwin' ]]; then
+    chsh -s /usr/local/bin/fish
+  else
+    chsh -s /usr/bin/fish
+  fi
 
 fi
 
