@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Change NPM default directory if necessary to avoid permission problems.
+if [[ $(npm config get prefix) == '/usr' ]]; then
+  mkdir ~/.npm-global
+  npm config set prefix '~/.npm-global'
+fi
+
 # Install trash CLI program if NPM is installed.
 if [[ `which npm` ]]; then
   npm install -g trash-cli
@@ -36,7 +42,7 @@ if [[ $(uname) == 'Darwin' ]] || [[ $(uname) == 'Linux' ]]; then
     echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
 
   fi
-  
+
   # Change default shell to Fish.
   chsh -s /usr/local/bin/fish
 

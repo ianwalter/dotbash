@@ -16,6 +16,11 @@ if test -d ~/.composer
 end
 
 # Move files to trash instead of completely removing them.
-if which trash
+if which trash > /dev/null
   alias rm="trash"
+end
+
+# Add NPM default bin directory to $PATH if created during installation.
+if test -d ~/.npm-global
+  set -x PATH ~/.npm-global/bin $PATH
 end
