@@ -16,4 +16,6 @@ if test -d ~/.composer
 end
 
 # Move files to trash instead of completely removing them.
-alias rm="trash"
+if which trash
+  alias rm="trash"
+end
