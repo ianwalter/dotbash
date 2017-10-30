@@ -7,7 +7,7 @@ if [[ $(npm config get prefix) == '/usr' ]]; then
 fi
 
 # Install trash CLI program if NPM is installed.
-if [[ `which npm` ]]; then
+if [[ `which npm` ]] && ! [[ `which trash` ]]; then
   npm install -g trash-cli
 fi
 
@@ -15,20 +15,22 @@ fi
 cp fishfile ~/.config/fish/fishfile
 cp config.fish ~/.config/fish/config.fish
 
-if [[ $(uname) == 'Darwin' ]]; then
+if ! [[ `which fish` ]]; then
+  if [[ $(uname) == 'Darwin' ]]; then
 
-  # Add OS X specific configuration to the configuration directory.
-  cp osx.fish ~/.config/fish/osx.fish
-
-  # Install Fish.
-  brew install fish curl
-
-else
-  if [[ $(uname) == 'Linux' ]]; then
+    # Add OS X specific configuration to the configuration directory.
+    cp osx.fish ~/.config/fish/osx.fish
 
     # Install Fish.
-    sudo apt-get install -y fish curl
+    brew install fish curl
 
+  else
+    if [[ $(uname) == 'Linux' ]]; then
+
+      # Install Fish.
+      sudo apt-get install -y fish curl
+
+    fi
   fi
 fi
 
@@ -44,10 +46,12 @@ if [[ $(uname) == 'Darwin' ]] || [[ $(uname) == 'Linux' ]]; then
   fi
 
   # Change default shell to Fish.
-  if [[ $(uname) == 'Darwin' ]]; then
-    chsh -s /usr/local/bin/fish
-  else
-    chsh -s /usr/bin/fish
+  if ! [[ `echo $SHELL | grep fish` ]]; then
+    if [[ $(uname) == 'Darwin' ]]; then
+      chsh -s /usr/local/bin/fish
+    else
+      chsh -s /usr/bin/fish
+    fi
   fi
 
 fi
