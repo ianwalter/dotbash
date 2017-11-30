@@ -27,6 +27,9 @@ if ! [[ `which fish` ]]; then
   else
     if [[ $(uname) == 'Linux' ]]; then
 
+      # Install xclip.
+      sudo apt-get install xclip -y
+
       # Install Fish.
       sudo apt-get install -y fish curl
 

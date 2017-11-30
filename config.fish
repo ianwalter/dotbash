@@ -24,3 +24,9 @@ end
 if test -d ~/.npm-global
   set -x PATH ~/.npm-global/bin $PATH
 end
+
+# Create pbcopy and pbpaste aliases if xclip is installed.
+if which xclip > /dev/null
+  alias pbcopy='xclip -selection clipboard'
+  alias pbpaste='xclip -selection clipboard -o'
+end

@@ -1,5 +1,5 @@
 # [dotfish](https://github.com/ianwalter/dotfish)
-Ian's fish configurations (part of [dotfiles](https://github.com/ianwalter/dotfiles)).
+> Ian's fish configurations (part of [dotfiles](https://github.com/ianwalter/dotfiles)).
 
 ## Usage
 To add an environment variable, just add the variable inside of a .bash file
