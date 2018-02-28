@@ -1,6 +1,6 @@
-# Tell other programs like git to use vim as the default editor.
-set -x EDITOR 'vim'
-set -x VISUAL 'vim'
+# Tell other programs like git to use VS Code as the default editor.
+set -x EDITOR 'code'
+set -x VISUAL 'code'
 
 # Configuration for the history command.
 set -x HISTTIMEFORMAT '%d/%m/%y %T '
