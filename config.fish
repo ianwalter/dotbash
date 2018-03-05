@@ -6,6 +6,9 @@ set -x VISUAL 'vim'
 set -x HISTTIMEFORMAT '%d/%m/%y %T '
 set -x HISTCONTROL 'ignoredups:erasedups'
 
+# Fixing issue with VS Code deleting things on Linux.
+set -x ELECTRON_TRASH 'gio'
+
 # Set programming language paths.
 if test -d ~/go
   set -x GOPATH $HOME/go
@@ -30,3 +33,6 @@ if which xclip > /dev/null
   alias pbcopy='xclip -selection clipboard'
   alias pbpaste='xclip -selection clipboard -o'
 end
+
+# Adding thefuck support.
+thefuck --alias | source
