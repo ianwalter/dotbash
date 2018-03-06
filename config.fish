@@ -10,9 +10,9 @@ set -x HISTCONTROL 'ignoredups:erasedups'
 set -x ELECTRON_TRASH 'gio'
 
 # Set programming language paths.
-if test -d ~/go
-  set -x GOPATH $HOME/go
-  set -x PATH $GOPATH/bin $PATH
+if test -d /usr/local/go/
+  set -x PATH /usr/local/go/bin $PATH
+  set -x PATH ~/go/bin $PATH
 end
 if test -d ~/.composer
   set -x PATH ~/.composer/vendor/bin $PATH
@@ -34,5 +34,5 @@ if which xclip > /dev/null
   alias pbpaste='xclip -selection clipboard -o'
 end
 
-# Adding thefuck support.
+# Add thefuck support.
 thefuck --alias | source
