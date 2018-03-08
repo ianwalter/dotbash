@@ -1,6 +1,6 @@
 # Tell other programs like git to use VS Code as the default editor.
-set -x EDITOR 'code'
-set -x VISUAL 'code'
+set -x EDITOR 'code --wait'
+set -x VISUAL 'code --wait'
 
 # Configuration for the history command.
 set -x HISTTIMEFORMAT '%d/%m/%y %T '
