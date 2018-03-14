@@ -11,8 +11,9 @@ set -x ELECTRON_TRASH 'gio'
 
 # Set programming language paths.
 if test -d /usr/local/go/
+  set -x GOPATH ~/go
   set -x PATH /usr/local/go/bin $PATH
-  set -x PATH ~/go/bin $PATH
+  set -x PATH $GOPATH/bin $PATH
 end
 if test -d ~/.composer
   set -x PATH ~/.composer/vendor/bin $PATH
