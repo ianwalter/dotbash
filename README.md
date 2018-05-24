@@ -1,5 +1,5 @@
 # dotfish
-> Ian's fish configurations (part of
+> Ian's [fish shell](https://fishshell.com/) configurations (part of
   [dotfiles](https://github.com/ianwalter/dotfiles)).
 
 &nbsp;
