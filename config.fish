@@ -10,9 +10,8 @@ set -x HISTCONTROL 'ignoredups:erasedups'
 set -x ELECTRON_TRASH 'gio'
 
 # Set programming language paths.
-if test -d /usr/local/go/
+if test -d ~/go
   set -x GOPATH ~/go
-  set -x PATH /usr/local/go/bin $PATH
   set -x PATH $GOPATH/bin $PATH
 end
 if test -d ~/.composer
