@@ -14,7 +14,7 @@ if test -d ~/go
   set -x GOPATH ~/go
   set -x PATH $GOPATH/bin $PATH
 end
-if test -d ~/.composer
+if test -d ~/.composer/vendor/bin
   set -x PATH ~/.composer/vendor/bin $PATH
 end
 
